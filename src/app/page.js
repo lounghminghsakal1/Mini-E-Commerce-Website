@@ -13,7 +13,7 @@ export default async function Home() {
   return(
     <div>
       <div className="w-full h-[50vh] border-2 border-gray-500 rounded-md mt-2 shadow ">
-        <img src={productsList.products[0].thumbnail} alt="Hero Banner" className="w-full h-full "/>
+        <img src="images/homebannerImg.jpg" alt="Hero Banner" className="w-full h-full "/>
       </div>
       <section className="mt-4">
         <h2 className="text-center font-bold text-blue-600 text-2xl">Featured Categories</h2>
