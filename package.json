@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "eslint"
   },
+  
+  "engines": {
+  "node": "20.x"
+  },
+
   "dependencies": {
     "next": "15.5.4",
     "react": "19.1.0",
