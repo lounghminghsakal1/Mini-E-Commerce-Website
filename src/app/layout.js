@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "./context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,11 @@ export default function RootLayout({ children }) {
             <a className="cursor-pointer"><li>Cart</li></a>
           </ul>
         </header>
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow">
+          <CartProvider>
+            {children}
+          </CartProvider>
+        </main>
         <footer className="bg-gray-600 text-white p-2">
           <div>
             <p>© {new Date().getFullYear()} Sakal Shop</p>
