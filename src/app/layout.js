@@ -21,22 +21,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <header className="flex gap-4 justify-around items-center bg-gray-600">
-          <h2 className="text-lg font-semibold text-white">Sakal Shop</h2>
+        <header className="flex gap-2 justify-around items-center bg-gray-50">
+          <h2 className="text-lg font-bold text-emerald-600">Sakal Shop</h2>
           <div>
-            <input type="text" placeholder="Search Products..." className="bg-white w-40 rounded-sm px-2 py-1 m-2 sm:w-auto"/>
+            <input type="text" placeholder="Search Products..." className="bg-gray-300 w-40 rounded-sm px-2 py-1 sm:w-auto"/>
           </div>
-          <ul className="flex gap-4 text-white mr-2">
+          <ul className="flex gap-4 text-emerald-500 font-semibold">
             <a className="cursor-pointer" href="/"><li>Home</li></a>
             <a className="cursor-pointer" href="/products"><li>Products</li></a>
             <a className="cursor-pointer"><li>Cart</li></a>
           </ul>
         </header>
-        <main className="flex-grow">
-          <CartProvider>
-            {children}
-          </CartProvider>
-        </main>
+        <main className="flex-grow">{children}</main>
         <footer className="bg-gray-600 text-white p-2">
           <div>
             <p>© {new Date().getFullYear()} Sakal Shop</p>

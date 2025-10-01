@@ -117,17 +117,17 @@ const ProductsPage = function () {
     },[]);
 
     return (
-        <section>
-            <h1 className="text-center text-2xl mt-4 text-rose-700 font-semibold">Products</h1>
+        <section className='bg-gray-100 rounded-sm'>
+            <h1 className="text-center text-2xl mt-4 text-emerald-700 font-bold">Products</h1>
             <div className='flex gap-10 justify-center items-center my-4'>
                 <input type='text' placeholder='Search for Products ...' className='border-2 p-2 rounded-md' onChange={(e) => setSearchProductName(e.target.value)}/>
                 {/* <button onClick={applyFiltersAndSearch} className='border-2 p-2 rounded-md bg-green-600 text-white hover:bg-green-500 cursor-pointer'>Search</button> */}
             </div>
             
-            <div className='flex flex-col items-center border-2 rounded-lg mx-2'>
-                <h2 className='text-lg text-cyan-500 font-semibold my-2'>Filterations</h2>
+            <div className='flex flex-col items-center border-2 border-teal-500 shadow-teal-100 shadow-lg  rounded-lg mx-2'>
+                <h2 className='text-xl text-teal-800 font-semibold my-2'>Filterations</h2>
                 <div className='flex gap-2 items-center'>
-                    <p className='font-bold'>Filter by Categories: </p>
+                    <p className='font-bold text-teal-500'>Filter by Categories: </p>
                     <select className='border-2 p-2 rounded-lg my-2' onChange={(e) => setFilters({...filters,category:e.target.value})}>
                         <option value="">All Categories</option>
                         {categoriesList.map((cat,index) => (
@@ -136,7 +136,7 @@ const ProductsPage = function () {
                     </select>
                 </div>
                 <div className='flex gap-2 items-center '>
-                    <p className='font-bold'>Filter by Brand: </p>
+                    <p className='font-bold text-teal-500'>Filter by Brand: </p>
                     <select className='border-2 p-2 rounded-lg' onChange={(e) => setFilters({...filters,brand:e.target.value})}>
                         <option value="">All Brands</option>
                         {brandsList.map((brand,index)=> (
@@ -145,12 +145,12 @@ const ProductsPage = function () {
                     </select>
                 </div>
                 <div className='flex flex-col sm:flex-row items-center my-2 gap-2'>
-                    <p className='font-bold mr-2'>Filter by Price: </p>
+                    <p className='font-bold mr-2 text-teal-500'>Filter by Price: </p>
                     <input placeholder='min price' type="number" className='border-2 p-2 rounded-md' onChange={(e) => setFilters({...filters,priceRange:[e.target.value ? Number(e.target.value):0,filters.priceRange[1]]})}/>
                     <input placeholder='max price' type="number" className='border-2 p-2 rounded-md' onChange={(e) => setFilters({...filters,priceRange:[filters.priceRange[0], e.target.value ? Number(e.target.value) : Infinity]})}/>
                 </div>
                 <div className='flex items-center my-2 gap-2'>
-                    <p className='font-bold'>Filter by Rating: </p>
+                    <p className='font-bold text-teal-500'>Filter by Rating: </p>
                     <select className='border-2 p-2 rounded-lg' onChange={(e) => setFilters({...filters,rating:Number(e.target.value)})}>
                         <option value={0}>All Ratings</option>
                         <option value={4}>⭐ 4 & up</option>
@@ -160,7 +160,7 @@ const ProductsPage = function () {
                     </select>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <p className='font-bold'>Sort by: </p>
+                    <p className='font-bold text-teal-500'>Sort by: </p>
                     <select className='border-2 p-2 rounded-lg my-2' onChange={(e) => setSortBy(e.target.value)}>
                         <option value="Price: Low to High">Price: Low to High</option>
                         <option value="Price: High to Low">Price: High to Low</option>

@@ -26,9 +26,9 @@ const FeaturedCategories = async function () {
     return (
         <div className="grid grid-cols-3 gap-4 p-2 mx-2 mt-4 sm:grid-cols-4 lg:grid-cols-5">
             {categories.map((cat,index) => (
-                <div className="border-2 rounded-md flex flex-col shadow-xl" key={index}>
+                <div className="border-2 border-teal-400 rounded-md flex p-1 flex-col shadow-teal-lg hover:shadow-[0_0_10px_teal] transition-shadow duration-150" key={index}>
                     <img src={cat.image} alt={cat.name} />
-                    <h3 className="text-center font-semibold text-blue-800">{cat.name}</h3>
+                    <h3 className="text-center font-semibold text-teal-600 mb-3">{cat.name}</h3>
                 </div>
             ))}
         </div>
