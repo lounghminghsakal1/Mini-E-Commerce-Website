@@ -29,10 +29,13 @@ export default function RootLayout({ children }) {
           <ul className="flex gap-4 text-emerald-500 font-semibold">
             <a className="cursor-pointer" href="/"><li>Home</li></a>
             <a className="cursor-pointer" href="/products"><li>Products</li></a>
-            <a className="cursor-pointer"><li>Cart</li></a>
+            <a className="cursor-pointer" href="/cart"><li>Cart</li></a>
           </ul>
         </header>
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow">
+          <CartProvider>{children}
+          </CartProvider>
+        </main>
         <footer className="bg-gray-600 text-white p-2">
           <div>
             <p>© {new Date().getFullYear()} Sakal Shop</p>

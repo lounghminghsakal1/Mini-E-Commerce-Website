@@ -1,7 +1,11 @@
+
 import SwiperProducts from "./swiperProd"
 import SimilarProdsCat from "./similarProdsCat";
+import OrderProducts from "./ordering";
+
 
 const ProductPage = async function ({ params }) {
+
     const id = params.id;
     const res = await fetch(`https://dummyjson.com/products/${id}`,{
         cache:'no-store'
@@ -59,12 +63,8 @@ const ProductPage = async function ({ params }) {
                     </tbody>
                 </table>
             </div>
-            <div className="flex justify-around my-4">
-                <button className="bg-green-600 p-2 rounded-md text-white">Add to Cart</button>
-                <button className="bg-cyan-600 p-2 rounded-md text-white">Add to Wish list</button>
-            </div>
+            <OrderProducts product={product} />
             <hr />
-            
             <h1 className="font-bold text-xl text-center my-4">Similar Products</h1>
             <SimilarProdsCat category={product.category}/>
         </div>
