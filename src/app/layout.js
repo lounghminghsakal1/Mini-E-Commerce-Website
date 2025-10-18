@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "./context/CartContext";
+import Header from "./header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,23 +22,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <header className="flex gap-2 justify-around items-center bg-gray-50">
-          <h2 className="text-lg font-bold text-emerald-600">Sakal Shop</h2>
-          <div>
-            <input type="text" placeholder="Search Products..." className="bg-gray-300 w-40 rounded-sm px-2 py-1 sm:w-auto"/>
-          </div>
-          <ul className="flex gap-4 text-emerald-500 font-semibold">
-            <a className="cursor-pointer" href="/"><li>Home</li></a>
-            <a className="cursor-pointer" href="/products"><li>Products</li></a>
-            <a className="cursor-pointer" href="/cart"><li>Cart</li></a>
-          </ul>
-        </header>
+        <Header />
         <main className="flex-grow">
-          <CartProvider>{children}
-          </CartProvider>
+          <CartProvider>{children}</CartProvider>
         </main>
-        <footer className="bg-gray-600 text-white p-2">
-          <div>
+        <footer className="bg-pink-600 text-white p-2">
+          <div className="font-semibold">
             <p>© {new Date().getFullYear()} Sakal Shop</p>
             <div className="flex gap-4">
               <a>Instagram</a>
