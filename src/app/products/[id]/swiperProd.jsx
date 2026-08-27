@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 const SwiperProducts = ({ images }) => {
   return (
@@ -22,7 +23,7 @@ const SwiperProducts = ({ images }) => {
           {images.map((prodImg, index) => (
             <SwiperSlide key={index}>
               <div className="h-[50vh] flex justify-center items-center border">
-                <img
+                <Image
                   src={prodImg}
                   alt={`product-${index}`}
                   className="h-[50vh] object-contain"
@@ -37,7 +38,7 @@ const SwiperProducts = ({ images }) => {
       <div className="hidden sm:flex justify-center gap-4">
         {images.map((prodImg, index) => (
           <div key={index} className="flex-1 flex justify-center border">
-            <img
+            <Image
               src={prodImg}
               alt={`product-${index}`}
               className="h-[50vh] object-contain"

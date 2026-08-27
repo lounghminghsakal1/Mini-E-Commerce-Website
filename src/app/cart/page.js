@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useCart } from "../context/CartContext";
 
 const CartPage = function () {
@@ -21,7 +22,7 @@ const CartPage = function () {
                 <p className="font-semibold">{item.title}</p>
                 <p className="text-sm text-gray-600">${item.price}</p>
               </div>
-              <img
+              <Image
                 src={item.thumbnail || item.images?.[0]}
                 alt={item.title}
                 className="w-20 h-20 object-cover rounded-md"
@@ -46,7 +47,7 @@ const CartPage = function () {
                 <p className="font-semibold">{item.title}</p>
                 <p className="text-sm text-gray-600">${item.price}</p>
               </div>
-              <img
+              <Image
                 src={item.thumbnail || item.images?.[0]}
                 alt={item.title}
                 className="w-20 h-20 object-cover rounded-md"
