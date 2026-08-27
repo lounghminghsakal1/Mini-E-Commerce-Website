@@ -25,6 +25,7 @@ const CartPage = function () {
               <Image
                 src={item.thumbnail || item.images?.[0]}
                 alt={item.title}
+                fill
                 className="w-20 h-20 object-cover rounded-md"
               />
             </div>
@@ -50,6 +51,7 @@ const CartPage = function () {
               <Image
                 src={item.thumbnail || item.images?.[0]}
                 alt={item.title}
+                fill
                 className="w-20 h-20 object-cover rounded-md"
               />
             </div>

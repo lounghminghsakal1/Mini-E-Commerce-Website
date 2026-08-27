@@ -26,6 +26,7 @@ const SwiperProducts = ({ images }) => {
                 <Image
                   src={prodImg}
                   alt={`product-${index}`}
+                  fill
                   className="h-[50vh] object-contain"
                 />
               </div>
@@ -41,6 +42,7 @@ const SwiperProducts = ({ images }) => {
             <Image
               src={prodImg}
               alt={`product-${index}`}
+              fill
               className="h-[50vh] object-contain"
             />
           </div>
